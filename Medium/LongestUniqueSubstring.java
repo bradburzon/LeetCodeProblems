@@ -5,16 +5,16 @@ public class LongestUniqueSubstring {
 	 * 
 	 */
 
-	public static int lengthOfLongestSubstring(String s) {
-		if(s.isEmpty()) {
+	public int lengthOfLongestSubstring(String s) {
+		if (s.isEmpty()) {
 			return 0;
 		}
 		return longestHelper(s, "", 0);
 	}
 
-	public static int longestHelper(String s, String ans, int largest) {
+	public int longestHelper(String s, String ans, int largest) {
 		if (s.isEmpty()) {
-			return largest;
+			return ((largest > ans.length()) ? largest : ans.length());
 		} else if (ans.contains(s.charAt(0) + "")) {
 			return longestHelper(s, "", (largest > ans.length()) ? largest : ans.length());
 		} else {
@@ -23,8 +23,9 @@ public class LongestUniqueSubstring {
 	}
 
 	public static void main(String[] args) {
-		String ex1 = "abcabcbb";
-		System.out.println(lengthOfLongestSubstring(ex1));
+		LongestUniqueSubstring test = new LongestUniqueSubstring();
+		String ex1 = "abc";
+		System.out.println(test.lengthOfLongestSubstring(ex1));
 	}
 
 }
