@@ -4,27 +4,52 @@ import org.junit.jupiter.api.Test;
 
 class LongestUniqueSubstringTest {
 	@Test
-	void testEmptyString() {
-		String example1 = "";
-		assertEquals(0, LongestUniqueSubstring.lengthOfLongestSubstring(example1));
+	void lengthOfLongestSubstring_emptyString_ShouldReturnOne() {
+		LongestUniqueSubstring test = new LongestUniqueSubstring();
+		String input = "";
+
+		int outcome = test.lengthOfLongestSubstring(input);
+
+		assertEquals(0, outcome);
 	}
 
 	@Test
-	void testExample() {
-		String example1 = "abcabcbb";
-		assertEquals(3, LongestUniqueSubstring.lengthOfLongestSubstring(example1));
+	void lengthOfLongestSubstring_consecutiveUniqueLetters_ShouldReturnSize() {
+		LongestUniqueSubstring test = new LongestUniqueSubstring();
+		String input = "abcdefg";
+		int size = input.length();
+		
+		int outcome = test.lengthOfLongestSubstring(input);
+		
+		assertEquals(size, outcome);
 	}
 	
 	@Test
-	void testExample2() {
-		String example2 = "bbbbbb";
-		assertEquals(1, LongestUniqueSubstring.lengthOfLongestSubstring(example2));
+	void lengthOfLongestSubstring_alternatingUniqueLetters_ShouldReturnTwo() {
+		LongestUniqueSubstring test = new LongestUniqueSubstring();
+		String input = "abababab";
+		
+		int outcome = test.lengthOfLongestSubstring(input);
+		
+		assertEquals(2, outcome);
 	}
 	
 	@Test
-	void testExample3() {
-		String example3 = "pwwkew";
-		assertEquals(3, LongestUniqueSubstring.lengthOfLongestSubstring(example3));
+	void lengthOfLongestSubstring_threeAlternatingUniqueLetters_ShouldReturnTwo() {
+		LongestUniqueSubstring test = new LongestUniqueSubstring();
+		String input = "abcabcabcabc";
+		
+		int outcome = test.lengthOfLongestSubstring(input);
+		
+		assertEquals(3, outcome);
+	}
+
+	@Test
+	void lengthOfLongestSubstring_repeatingLetter_ShouldReturnOne() {
+		LongestUniqueSubstring test = new LongestUniqueSubstring();
+		String input = "bbbbbb";
+		int outcome = test.lengthOfLongestSubstring(input);
+		assertEquals(1, outcome);
 	}
 
 }

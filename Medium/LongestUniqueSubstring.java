@@ -1,9 +1,5 @@
 
 public class LongestUniqueSubstring {
-	/*
-	 * string = "sbbasdd"
-	 * 
-	 */
 
 	public int lengthOfLongestSubstring(String s) {
 		if (s.isEmpty()) {
