@@ -27,7 +27,7 @@ Output: [0,1]
  */
 public class TwoSum {
 
-    public static class Solution {
+    public class Solution {
         public int[] twoSum(int[] nums, int target) {
             int start = 0;
             int end = nums.length - 1;
