@@ -1,27 +1,24 @@
 
-public class LongestUniqueSubstring {
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        String longest = "";
+        for (int i = 0; i < s.length(); i++) {
+            String substring = "";
+            for (int j = i; j < s.length(); j++) {
+                if (s.length() == 1) {
+                    if (!substring.contains(s.charAt(j) + "")) {
+                        substring += s.charAt(j);
+                    }
+                } else if (!substring.contains(s.charAt(j) + "")) {
+                    substring += s.charAt(j);
+                } else {
 
-	public int lengthOfLongestSubstring(String s) {
-		if (s.isEmpty()) {
-			return 0;
-		}
-		return longestHelper(s, "", 0);
-	}
-
-	public int longestHelper(String s, String ans, int largest) {
-		if (s.isEmpty()) {
-			return ((largest > ans.length()) ? largest : ans.length());
-		} else if (ans.contains(s.charAt(0) + "")) {
-			return longestHelper(s, "", (largest > ans.length()) ? largest : ans.length());
-		} else {
-			return longestHelper(s.substring(1), s.charAt(0) + ans, largest++);
-		}
-	}
-
-	public static void main(String[] args) {
-		LongestUniqueSubstring test = new LongestUniqueSubstring();
-		String ex1 = "abc";
-		System.out.println(test.lengthOfLongestSubstring(ex1));
-	}
-
+                    break;
+                }
+            }
+            longest = longest.length() < substring.length() ? substring : longest;
+            substring = "";
+        }
+        return longest.length();
+    }
 }
