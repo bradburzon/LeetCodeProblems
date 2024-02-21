@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MedianOfTwoSortedArrays {
-	class Solution {
+	public class Solution {
 		public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 			int num1Size = nums1.length;
 			int num2Size = nums2.length;
