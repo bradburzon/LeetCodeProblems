@@ -22,9 +22,8 @@ public class MergeTwoSortedLinkedLists {
 		}
 	}
 
-	class Solution {
+	public class Solution {
 		public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-			ListNode ans = new ListNode();
 			if (list1 == null) {
 				return list2;
 			} else if (list2 == null) {
@@ -37,5 +36,4 @@ public class MergeTwoSortedLinkedLists {
 			}
 		}
 	}
-
 }
