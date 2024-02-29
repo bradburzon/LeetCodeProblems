@@ -9,7 +9,7 @@ public class KidsMaxCandiesTest {
 	KidsMaxCandies kidMaxCandies = new KidsMaxCandies();
 
 	@Test
-	public void kidsWithCandies_emptyArray_ReturnEmptyArray() {
+	public void KidsWithCandies_EmptyArray_ReturnEmptyArray() {
 		int[] empty = {};
 		List<Boolean> actual = kidMaxCandies.kidsWithCandies(empty, 0);
 		
@@ -17,7 +17,7 @@ public class KidsMaxCandiesTest {
 	}
 
 	@Test
-	public void kidsWithCandies_singleChild_ReturnTrue() {
+	public void KidsWithCandies_SingleChild_ReturnTrue() {
 		int[] candies = { 5 };
 		List<Boolean> actual = kidMaxCandies.kidsWithCandies(candies, 3);
 		
@@ -25,7 +25,7 @@ public class KidsMaxCandiesTest {
 	}
 
 	@Test
-	public void kidsWithCandies_multipleChildren_SomeCanHaveMax() {
+	public void KidsWithCandies_MultipleChildren_SomeCanHaveMax() {
 		int[] candies = { 2, 3, 5, 1, 3 };
 		List<Boolean> actual = kidMaxCandies.kidsWithCandies(candies, 3);
 		
@@ -33,15 +33,15 @@ public class KidsMaxCandiesTest {
 	}
 
 	@Test
-	public void kidsWithCandies_noChildCanHaveMax_ReturnAllFalse() {
+	public void KidsWithCandies_OneChildCanHaveMax_ReturnAllFalse() {
 		int[] candies = { 4, 2, 1, 1, 2 };
 		List<Boolean> actual = kidMaxCandies.kidsWithCandies(candies, 1);
 		
-		assertEquals(Arrays.asList(false, false, false, false, false), actual);
+		assertEquals(Arrays.asList(true, false, false, false, false), actual);
 	}
 
 	@Test
-	public void kidsWithCandies_extraCandiesMakeAllMax_ReturnAllTrue() {
+	public void KidsWithCandies_ExtraCandiesMakeAllMax_ReturnAllTrue() {
 		int[] candies = { 1, 2, 3, 4, 5 };
 		List<Boolean> actual = kidMaxCandies.kidsWithCandies(candies, 10);
 		
@@ -49,7 +49,7 @@ public class KidsMaxCandiesTest {
 	}
 
 	@Test
-	public void kidsWithCandies_allChildrenEqual_ReturnAllTrue() {
+	public void KidsWithCandies_AllChildrenEqual_ReturnAllTrue() {
 		int[] candies = { 3, 3, 3, 3 };
 		List<Boolean> actual = kidMaxCandies.kidsWithCandies(candies, 0);
 		
