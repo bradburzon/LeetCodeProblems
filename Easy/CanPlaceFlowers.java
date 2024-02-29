@@ -23,10 +23,7 @@ public class CanPlaceFlowers {
 		for (int i = 0; i < flowerbed.length; i++) {
 			int right = Math.max(0, i - 1);
 			int left = Math.min(flowerbed.length - 1, i + 1);
-
-			System.out.println(right + " : " + left + " : " + i);
 			while (right <= left) {
-				System.out.println(right);
 				if (flowerbed[right] != 0) {
 					break;
 				}
