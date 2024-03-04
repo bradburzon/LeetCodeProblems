@@ -1,34 +1,29 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class ProductArrayExceptSelf {
 
-	public int[] productExceptSelf(int[] nums) {
-		int[] productArray = new int[nums.length];
+    public int[] productExceptSelf(int[] nums) {
+        int zeroCount = 0;
+        int product = 1;
 
-		int zeroNumber = Arrays.stream(nums).boxed().toList().stream().reduce(0,
-				(a, b) ->  b == 0 ? a + 1 : a);
-		System.out.println(zeroNumber);
-		int y = Arrays.stream(nums).boxed().toList().stream().reduce(1, (a, b) -> a * b);
+        for (int num : nums) {
+            if (num != 0) {
+                product *= num;
+            } else {
+                zeroCount++;
+            }
+        }
 
-		for(int i = 0; i < nums.length; i++) {
-//			productArray[i] = y / nums[i];
-		}
+        if (zeroCount >= 2) {
+            return new int[nums.length];
+        }
 
-		return productArray;
-	}
-
-	public static void main(String[] args) {
-		ProductArrayExceptSelf productArrayExceptSelf = new ProductArrayExceptSelf();
-		int[] newInt = {  0 , 4 , 0, 0 };
-
-		List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
-
-		for (int n : productArrayExceptSelf.productExceptSelf(newInt)) {
-			System.out.println(n);
-		}
-
-	}
-
+        int[] productArray = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (zeroCount == 0) {
+                productArray[i] = product / nums[i];
+            } else if (nums[i] == 0) {
+                productArray[i] = product;
+            }
+        }
+        return productArray;
+    }
 }
