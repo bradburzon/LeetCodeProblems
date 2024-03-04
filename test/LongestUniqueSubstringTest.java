@@ -1,13 +1,13 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
-class LongestUniqueSubstringTest {
+public class LongestUniqueSubstringTest {
 
-	private LongestUniqueSubstring longestSubstring = new LongestUniqueSubstring();
+	private final LongestUniqueSubstring longestSubstring = new LongestUniqueSubstring();
 
 	@Test
-	void givenEmptyStringWhenLengthOfLongestSubstringIsCalledThenReturnZero() {
+    public void givenEmptyStringWhenLengthOfLongestSubstringIsCalledThenReturnZero() {
 		String input = "";
 
 		int outcome = longestSubstring.lengthOfLongestSubstring(input);
@@ -16,7 +16,7 @@ class LongestUniqueSubstringTest {
 	}
 
 	@Test
-	void givenConsecutiveUniqueLettersWhenLongestSubstringIsCalledThenReturnLength() {
+    public void givenConsecutiveUniqueLettersWhenLongestSubstringIsCalledThenReturnLength() {
 		String input = "abcdfghijklmnop";
 
 		int outcome = longestSubstring.lengthOfLongestSubstring(input);
@@ -25,7 +25,7 @@ class LongestUniqueSubstringTest {
 	}
 
 	@Test
-	void givenConcesutiveLettersWhenLongestStringIsCalledThenReturnOne() {
+    public void givenConcesutiveLettersWhenLongestStringIsCalledThenReturnOne() {
 		String input = "aaaaaaaaaaaaaaaa";
 
 		int outcome = longestSubstring.lengthOfLongestSubstring(input);

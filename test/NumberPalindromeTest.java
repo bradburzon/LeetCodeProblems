@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 class NumberPalindromeTest {
 
-	private static NumberPalindrome numberPalindrome = new NumberPalindrome();
+	private static final NumberPalindrome numberPalindrome = new NumberPalindrome();
 
 	@Test
 	void givenSingleNumberWhenIsPalindromeIsCalledThenReturnTrue() {

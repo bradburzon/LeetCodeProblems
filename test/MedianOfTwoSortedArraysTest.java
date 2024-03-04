@@ -1,30 +1,31 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MedianOfTwoSortedArraysTest {
 
 	MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
 
 	@Test
-	void givenTwoArraysWithOneElementEachWhenFindMedianSortedArraysIsCalledThenReturnSumDividedByTwo() {
+	public void givenTwoArraysWithOneElementEachWhenFindMedianSortedArraysIsCalledThenReturnSumDividedByTwo() {
 		int[] array1 = { 1 };
 		int[] array2 = { 2 };
 
 		double actual = medianOfTwoSortedArrays.findMedianSortedArrays(array1, array2);
-		assertEquals(1.5, actual);
+		assertEquals(1.5, actual, 0.0);
 	}
 
 	@Test
-	void givenTwoArraysWithOneEmptyWhenFindMedianSortedArraysIsCalledThenReturnMedianOfNonEmptyArray() {
+	public void givenTwoArraysWithOneEmptyWhenFindMedianSortedArraysIsCalledThenReturnMedianOfNonEmptyArray() {
 		int[] array1 = { 3, 5, 6, 7, 8, 43, 90 }; // 3, 5, 6, 7, 8, 43, 90
 		int[] array2 = {};
 		double actual = medianOfTwoSortedArrays.findMedianSortedArrays(array1, array2);
 
-		assertEquals(7, actual);
+		assertEquals(7, actual, 0.0);
 	}
 
 	@Test
-	void givenTwoLargeArraysWhenFindMedianSortedArraysIsCalledThenReturnMedianOfNonEmptyArray() {
+	public void givenTwoLargeArraysWhenFindMedianSortedArraysIsCalledThenReturnMedianOfNonEmptyArray() {
 		int[] array1 = { 3, 17, 35, 50, 52, 62, 62, 86, 95, 105, 117, 123, 139, 143, 147, 155, 157, 170, 180, 183, 191,
 				196, 207, 209, 210, 235, 240, 246, 247, 278, 279, 299, 299, 311, 326, 329, 329, 374, 397, 405, 407, 421,
 				449, 455, 466, 474, 488, 502 };
@@ -34,6 +35,6 @@ public class MedianOfTwoSortedArraysTest {
 
 		double actual = medianOfTwoSortedArrays.findMedianSortedArrays(array1, array2);
 
-		assertEquals(522, actual);
+		assertEquals(522, actual, 0.0);
 	}
 }

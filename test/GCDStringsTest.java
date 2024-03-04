@@ -1,9 +1,10 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class GCDStringsTest {
 
-	private GCDStrings gcdStrings = new GCDStrings();
+	private final GCDStrings gcdStrings = new GCDStrings();
 
 	@Test
 	public void GcdStrings_TwoEmptyStrings_ReturnEmptyString() {

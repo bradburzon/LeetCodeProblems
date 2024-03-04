@@ -1,4 +1,5 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static junit.framework.TestCase.assertEquals;
+
 
 import org.junit.Test;
 
@@ -6,7 +7,7 @@ public class MergeStringAlternativelyTest {
 
 	MergeStringAlternatively mergeStringAlternatively = new MergeStringAlternatively();
 	@Test
-	public void givenTwoEmptyStringWhenmergeAlternatelyIsCalledThenReturnEmptyString() {
+	public void givenTwoEmptyStringWhenMergeAlternatelyIsCalledThenReturnEmptyString() {
 		String word1 = "";
 		String word2 = "";
 
@@ -27,7 +28,7 @@ public class MergeStringAlternativelyTest {
 	
 
 	@Test
-	public void givenEmptyAndNonEmptyStringWhenmergeAlternatelyIsCalledThenReturnNonEmptyString() {
+	public void givenEmptyAndNonEmptyStringWhenMergeAlternatelyIsCalledThenReturnNonEmptyString() {
 		String word1 = "";
 		String word2 = "abc";
 
@@ -37,7 +38,7 @@ public class MergeStringAlternativelyTest {
 	}
 
 	@Test
-	public void givenNonEmptyAndEmptyStringWhenmergeAlternatelyIsCalledThenReturnNonEmptyString() {
+	public void givenNonEmptyAndEmptyStringWhenMergeAlternatelyIsCalledThenReturnNonEmptyString() {
 		String word1 = "abc";
 		String word2 = "";
 
@@ -47,7 +48,7 @@ public class MergeStringAlternativelyTest {
 	}
 
 	@Test
-	public void givenTwoNonEmptySameSizeStringWhenmergeAlternatelyIsCalledThenReturnAlternateMergedString() {
+	public void givenTwoNonEmptySameSizeStringWhenMergeAlternatelyIsCalledThenReturnAlternateMergedString() {
 		String word1 = "abc";
 		String word2 = "xyz";
 
@@ -57,7 +58,7 @@ public class MergeStringAlternativelyTest {
 	}
 	
 	@Test
-	public void givenTwoNonEmptyStringWithDifferentSizeWhenmergeAlternatelyIsCalledThenReturnAlternateMergedString() {
+	public void givenTwoNonEmptyStringWithDifferentSizeWhenMergeAlternatelyIsCalledThenReturnAlternateMergedString() {
 		String word1 = "a";
 		String word2 = "lmnopqrstuvwxyz";
 

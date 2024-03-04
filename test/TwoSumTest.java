@@ -1,26 +1,28 @@
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class TwoSumTest {
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+
+public class TwoSumTest {
 
 	TwoSum twoSum = new TwoSum();
 
 	@Test
-	void givenNoSolutionWhenTwoSumIsCalledThenReturnArrayWithZeroAndLenghtMinusOneAsElement() {
-		int[] nums = { 1, 2, 3, 4 };
+	public void givenNoSolutionWhenTwoSumIsCalledThenReturnArrayWithZeroAndLengthMinusOneAsElement() {
+		int[] numbers = { 1, 2, 3, 4 };
 		int target = 9;
-		int[] actual = twoSum.twoSum(nums, target);
+		int[] actual = twoSum.twoSum(numbers, target);
 
-		int[] expected = { 0, nums.length - 1 };
+		int[] expected = { 0, numbers.length - 1 };
 		assertArrayEquals(expected, actual);
 	}
 
 	@Test
-	void givenSolutionWhenTwoSumIsCalledThenReturnArrayWithRightIndeces() {
-		int[] nums = { 3, 2, 4 };
+	public void givenSolutionWhenTwoSumIsCalledThenReturnArrayWithRightIndices() {
+		int[] numbers = { 3, 2, 4 };
 		int target = 6;
-		int[] actual = twoSum.twoSum(nums, target);
+		int[] actual = twoSum.twoSum(numbers, target);
 
 		int[] expected = { 1, 2 };
 		assertArrayEquals(expected, actual);

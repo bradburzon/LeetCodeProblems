@@ -1,12 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
 public class LongestCommonPrefixTest {
-	private LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+	private final LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
 
 	@Test
-	void givenOneElementInStringArrayWhenLongestCommonPrefixIsCalledThenReturnTheElement() {
+    public void givenOneElementInStringArrayWhenLongestCommonPrefixIsCalledThenReturnTheElement() {
 		String[] array = { "Element" };
 
 		String actual = longestCommonPrefix.longestCommonPrefix(array);
@@ -15,7 +15,7 @@ public class LongestCommonPrefixTest {
 	}
 
 	@Test
-	void givenAnArrayThatContainsEmptyStringWhenLongestCommonPrefixIsCalledThenReturnEmptyString() {
+    public void givenAnArrayThatContainsEmptyStringWhenLongestCommonPrefixIsCalledThenReturnEmptyString() {
 		String[] array = { "Element", "", "a", "abc" };
 
 		String actual = longestCommonPrefix.longestCommonPrefix(array);
@@ -24,7 +24,7 @@ public class LongestCommonPrefixTest {
 	}
 
 	@Test
-	void givenAnArrayThatContainsSameStringWhenLongestCommonPrefixIsCalledThenReturnTheString() {
+    public void givenAnArrayThatContainsSameStringWhenLongestCommonPrefixIsCalledThenReturnTheString() {
 		String[] array = { "Element", "Element", "Element" };
 
 		String actual = longestCommonPrefix.longestCommonPrefix(array);
