@@ -1,26 +1,34 @@
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
+        if(height.length == 1){
+            throw new RuntimeException("height length must be greater than 1");
+        }
         int start = 0;
         int end = height.length - 1;
         int max = Integer.MIN_VALUE;
 
         while (start < end) {
-            int leftSide = height[start];
-            int lowest = Math.min(leftSide, height[end]);
+            int lowest = Math.min(height[start], height[end]);
             int area = getArea(lowest, end - start);
             if (area > max) {
                 max = area;
             }
-            if (lowest == leftSide) {
-               start++;
+            if (lowest == height[start]) {
+                int oldStart = height[start];
+                while (height[start] <= oldStart && start < end) {
+                    start++;
+                }
             } else {
-              end--;
+                int oldEnd = height[end];
+                while (height[end] <= oldEnd && end > start) {
+                    end--;
+                }
             }
         }
         return max;
     }
 
-    private int getArea(int x, int y) {
+    public int getArea(int x, int y) {
         return x * y;
     }
 }
