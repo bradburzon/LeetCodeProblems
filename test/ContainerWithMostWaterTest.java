@@ -18,10 +18,10 @@ public class ContainerWithMostWaterTest {
     }
 
     @Test
-    public void maxArea_DoubleElementArray_ReturnElementOneTimesElementTwo() {
-        int[] height = new int[]{1, 2};
+    public void maxArea_DoubleElementArray_ReturnTheSmallestElement() {
+        int[] height = new int[]{6, 2};
         int actual = containerWithMostWater.maxArea(height);
-        assertEquals("The max area should be 1", 1, actual);
+        assertEquals("The max area should be 2", 2, actual);
     }
 
     @Test
