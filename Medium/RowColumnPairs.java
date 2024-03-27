@@ -1,39 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class RowColumnPairs {
+
     public int equalPairs(int[][] grid) {
-        int equalArrays = 0;
-        int length = grid[0].length;
-        for (int i = 0; i < length; i++) {
-            List<Integer> row = getRow(i, grid);
-            for (int j = 0; j < length; j++) {
-                List<Integer> column = getColumn(j, grid);
-                //System.out.println(row + " : " + column);
-                if (row.equals(column)) {
-                    equalArrays++;
+        int equalPairsCount = 0;
+        int gridSize = grid.length;
+
+        for (int row = 0; row < gridSize; row++) {
+            for (int col = 0; col < gridSize; col++) {
+                if (isRowColumnEqual(row, col, grid)) {
+                    equalPairsCount++;
                 }
             }
         }
-
-        return equalArrays;
+        return equalPairsCount;
     }
 
-    public List<Integer> getColumn(int column, int[][] grid) {
-        int length = grid[0].length;
-        Integer[] array = new Integer[length];
-        for (int row = 0; row < length; row++) {
-            array[row] = grid[row][column];
+    private boolean isRowColumnEqual(int row, int col, int[][] grid) {
+        for (int i = 0; i < grid.length; i++) {
+            if (grid[row][i] != grid[i][col]) {
+                return false;
+            }
         }
-        return Arrays.asList(array);
-    }
-
-    public List<Integer> getRow(int row, int[][] grid) {
-        List<Integer> array = new ArrayList<>();
-        for (int n : grid[row]) {
-            array.add(n);
-        }
-        return array;
+        return true;
     }
 }
