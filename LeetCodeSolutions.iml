@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Hard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Medium" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/DataStructures" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="corretto-17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />

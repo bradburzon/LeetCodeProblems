@@ -7,31 +7,28 @@ public class MergeTwoSortedLinkedListsTest {
 
     @Test
     void givenTwoEmptyLinkedListWhenMergeTwoListsIsCalledThenReturnNull() {
-        MergeTwoSortedLinkedLists.ListNode actual = mergeTwoSortedLinkedLists.mergeTwoLists(null, null);
+        ListNode actual = mergeTwoSortedLinkedLists.mergeTwoLists(null, null);
 
         assertNull(actual);
     }
 
     @Test
     void givenOneEmptyLinkedListWhenMergeTwoListsIsCalledThenReturnTheOtherLinkedList() {
-        MergeTwoSortedLinkedLists.ListNode listNode1 = mergeTwoSortedLinkedLists.new ListNode(1, null);
+        ListNode listNode1 = new ListNode(1, null);
 
-        MergeTwoSortedLinkedLists.ListNode actual = mergeTwoSortedLinkedLists.mergeTwoLists(listNode1, null);
+        ListNode actual = mergeTwoSortedLinkedLists.mergeTwoLists(listNode1, null);
 
         assertEquals(listNode1, actual);
     }
 
     @Test
     void givenTwoNonEmptyArrayWhenMergeTwoListsIsCalledThenReturnSortedLinkedList() {
-        MergeTwoSortedLinkedLists.ListNode listNode2 = mergeTwoSortedLinkedLists.new ListNode(2, null);
+        ListNode listNode2 = new ListNode(2, null);
 
-        MergeTwoSortedLinkedLists.ListNode listNode4 = mergeTwoSortedLinkedLists.new ListNode(4, null);
-        MergeTwoSortedLinkedLists.ListNode actual = mergeTwoSortedLinkedLists.mergeTwoLists(listNode2, listNode4);
+        ListNode listNode4 = new ListNode(4, null);
+        ListNode actual = mergeTwoSortedLinkedLists.mergeTwoLists(listNode2, listNode4);
 
-        MergeTwoSortedLinkedLists.ListNode expected = mergeTwoSortedLinkedLists.new ListNode(2, listNode4);
-        System.out.println(expected.val + " : " + actual.val);
-        System.out.println(expected.next.val + " : " + actual.next.val);
-        System.out.println(expected.next.next + " : " + actual.next.next);
+        ListNode expected = new ListNode(2, listNode4); 
         assertEquals(expected.val, actual.val);
         assertEquals(expected.next.val, actual.next.val);
         assertEquals(expected.next.next, actual.next.next);
